@@ -12,5 +12,22 @@ $ curl -fsSL https://ollama.com/install.sh | sh
 
 Here are a couple of ways:
 
-- Using the official Ollama Python library
-- Using LangChain
+### Using the official Ollama Python library
+
+Install `ollama` using pip:
+
+```sh
+$ pip3 install ollama
+```
+
+A simple usage example
+
+### Using LangChain
+
+Install langchain using pip:
+
+```sh
+pip3 install langchain
+```
+
+A simple usage example
