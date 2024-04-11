@@ -14,13 +14,13 @@ Here are a couple of ways:
 
 ### Using the official Ollama Python library
 
-Install `ollama` using pip:
+Install ollama using pip:
 
 ```sh
 $ pip3 install ollama
 ```
 
-A simple usage example
+[A simple usage example](https://github.com/balapriyac/python-projects/blob/main/ollama-tutorial/main.py)
 
 ### Using LangChain
 
@@ -30,4 +30,4 @@ Install langchain using pip:
 pip3 install langchain
 ```
 
-A simple usage example
+[A simple usage example](https://github.com/balapriyac/python-projects/blob/main/ollama-tutorial/main1.py)
