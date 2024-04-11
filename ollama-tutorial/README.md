@@ -8,4 +8,9 @@ Visit the official website and download the installer if you are on a Mac or a W
 $ curl -fsSL https://ollama.com/install.sh | sh
 ```
 
+## Run Ollama with Python
 
+Here are a couple of ways:
+
+- Using the official Ollama Python library
+- Using LangChain
