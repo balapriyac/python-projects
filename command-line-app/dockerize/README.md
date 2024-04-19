@@ -13,7 +13,7 @@ $ sudo usermod -aG docker $USER
 
 ## Build and Run the Docker Image
 
-Here we containerize the command-line TODO list app with Docker. To build an image from the Dockerfile run:
+Here we containerize a simple [command-line TODO list app](https://github.com/balapriyac/python-projects/blob/main/command-line-app/dockerize/todo.py) with Docker. To build an image from the [Dockerfile](https://github.com/balapriyac/python-projects/blob/main/command-line-app/dockerize/Dockerfile) run:
 
 ```sh
 docker build todo-app .
