@@ -10,3 +10,17 @@ $ sudo usermod -aG docker $USER
 ```
 
 2. If you use an older version of Docker, you may get deprecation warnings when you run the `docker build` command. This is because the legacy build client will be deprecated in future releases. So you may want to [install buildx](https://github.com/docker/buildx), a CLI tool to use BuildKit's capabilities. And use the `docker buildx build` command to build with BuildKit.
+
+## Build and Run the Docker Image
+
+Here we containerize the command-line TODO list app with Docker. To build an image from the Dockerfile run:
+
+```sh
+docker build todo-app .
+```
+
+And start the container (we need an interactive terminal session within the container) by running the following `docker run` command:
+
+```sh
+docker run -it todo-app
+```
