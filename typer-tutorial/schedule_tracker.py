@@ -38,4 +38,32 @@ def add_task(
     save_schedule(schedule)
     typer.echo(f"Task '{task}' added at {task_time.strftime('%H:%M')} with priority {priority}")
 
+@app.command()
+def list_tasks():
+    """List all scheduled tasks."""
+    schedule = load_schedule()
+    if not schedule:
+        typer.echo("No tasks found.")
+        return
+    for task in sorted(schedule, key=lambda x: x["time"]):
+        @app.command()
+        print(f"Task {i}: {task['task']}")
+        print(f"  Time: {task['time']}")
+        print(f"  Priority: {task['priority']}")
+        print("-" * 40)  # Add a separator line for better readability
+
+@app.command()
+def remove_task(task_number: int):
+    """Remove a task by its number."""
+    schedule = load_schedule()
+    if 0 < task_number <= len(schedule):
+        removed_task = schedule.pop(task_number - 1)
+        save_schedule(schedule)  # Save the updated schedule
+        typer.echo(f"Removed task '{removed_task['task']}' scheduled at {removed_task['time']}") 
+    else: 
+        typer.echo(f"Invalid task number. Choose a number between 1 and {len(schedule)}.")
+
+if __name__ == "__main__":
+	app()
+
 
