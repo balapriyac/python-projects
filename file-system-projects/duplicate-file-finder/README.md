@@ -62,8 +62,4 @@ Group 2 (2 files, 15.5 MB each):
 - `-i, --interactive`: Enable interactive cleanup mode
 - `--dry-run`: Show duplicates without cleanup option
 
----
 
-
-- **Source wins** (`s`): Overwrite target with source file
-- **Target wins** (`t`
