@@ -88,4 +88,35 @@ The synchronizer uses the following logic to determine actions:
    - Different content + source newer → Update target
    - Different content + target newer → Update source
    - Different content + same timestamp → Conflict (manual resolution)
+  
+### Setup
+
+1. Download the Python file
+2. Make them executable (optional):
+   ```bash
+   chmod +x directory_sync.py
+   ```
+
+## Example Workflows
+
+### Setting Up Backup Sync
+
+```bash
+# Initial sync (dry run first)
+python directory_sync.py ~/Documents ~/Backup --dry-run
+
+# Execute the sync
+python directory_sync.py ~/Documents ~/Backup
+
+# Regular sync with auto-conflict resolution
+python directory_sync.py ~/Documents ~/Backup --auto-resolve source
+```
+
+### Photo Library Management
+
+```bash
+# Sync photos between devices
+python directory_sync.py ~/Pictures /media/external/Pictures
+```
+
 
