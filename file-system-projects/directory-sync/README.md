@@ -59,3 +59,33 @@ Total changes: 21 files
    Target: 2024-08-15 14:32:18
 ```
 
+
+### Conflict Resolution
+
+When conflicts are detected, you'll be prompted to choose:
+
+- **Source wins** (`s`): Overwrite target with source file
+- **Target wins** (`t`): Overwrite source with target file
+- **Keep both** (`k`): Rename target file and copy source
+- **Skip** (`skip`): Leave both files unchanged
+
+### Command Line Options
+
+- `source`: Source directory path
+- `target`: Target directory path
+- `--dry-run`: Preview actions without executing them
+- `--log-file`: Custom path for sync log file
+- `--auto-resolve`: Automatically resolve conflicts (`source` or `target` wins)
+
+### Sync Logic
+
+The synchronizer uses the following logic to determine actions:
+
+1. **File exists only in source** → Copy to target
+2. **File exists only in target** → Copy to source
+3. **File exists in both locations**:
+   - Same content (hash) → No action needed
+   - Different content + source newer → Update target
+   - Different content + target newer → Update source
+   - Different content + same timestamp → Conflict (manual resolution)
+
