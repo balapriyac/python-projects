@@ -4,12 +4,12 @@ A simple, practical JSON configuration manager for Python applications.
 
 ## Features
 
-- ✅ Load and validate JSON configurations
-- ✅ Environment-specific configs (dev/staging/prod)
-- ✅ Automatic backups before changes
-- ✅ Configuration templates
-- ✅ Deep merge configurations
-- ✅ Schema validation
+- Load and validate JSON configurations
+- Environment-specific configs (dev/staging/prod)
+- Automatic backups before changes
+- Configuration templates
+- Deep merge configurations
+- Schema validation
 
 ## Quick Start
 
@@ -123,4 +123,27 @@ template = {
 config.create_template("webapp", template)
 ```
 
+## API Reference
+
+### ConfigManager(config_dir="configs")
+
+Main class for managing configurations.
+
+**Methods:**
+- `load_config(file, validate=True)` - Load and validate config
+- `save_config(config, file, create_backup=True)` - Save config with backup
+- `get_environment_config(base_file, env)` - Get env-specific config
+- `merge_configs(base, override)` - Deep merge two configs
+- `backup_config(file)` - Create backup
+- `create_template(name, data)` - Create config template
+- `list_configs()` - List all config files
+- `list_backups()` - List all backup files
+
+## Validation Rules
+
+Built-in validation checks:
+- Required fields: `app_name`, `version`
+- Version format: `X.Y.Z` (e.g., "1.0.0")
+- Port range: 1-65535
+- Boolean fields: `debug`
 
